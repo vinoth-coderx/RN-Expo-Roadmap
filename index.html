@@ -588,14 +588,7 @@ code.inline {
       <a class="sidebar-subtopic" href="#rn8-async">AsyncStorage & MMKV</a>
       <a class="sidebar-subtopic" href="#rn8-secure">Secure storage</a>
       <a class="sidebar-subtopic" href="#rn8-sqlite">SQLite</a>
-      <a class="sidebar-subtopic" href="#rn8-wm-intro">WatermelonDB — Intro</a>
-      <a class="sidebar-subtopic" href="#rn8-wm-setup">WatermelonDB — Setup</a>
-      <a class="sidebar-subtopic" href="#rn8-wm-schema">Schema & Models</a>
-      <a class="sidebar-subtopic" href="#rn8-wm-crud">CRUD Operations</a>
-      <a class="sidebar-subtopic" href="#rn8-wm-observe">Reactive Queries</a>
-      <a class="sidebar-subtopic" href="#rn8-wm-relations">Relations</a>
-      <a class="sidebar-subtopic" href="#rn8-wm-sync">Sync with Server</a>
-      <a class="sidebar-subtopic" href="#rn8-wm-component">Full Component Example</a>
+      <a class="sidebar-subtopic" href="#rn8-watermelondb">🍉 WatermelonDB</a>
     </div>
   </div>
 
@@ -2355,44 +2348,65 @@ db.<span class="fn">transaction</span>((tx) =&gt; {
     </div>
   </div>
 
-  <!-- ======= WATERMELONDB — FULL SETUP ======= -->
-  <div style="margin-top:2.5rem; padding-top:2rem; border-top:1px dashed var(--border-color);">
-    <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;">
-      <div style="width:40px;height:40px;border-radius:10px;background:rgba(0,229,255,0.1);border:1px solid rgba(0,229,255,0.15);display:flex;align-items:center;justify-content:center;font-size:1.15rem;">🍉</div>
+  <!-- ======= WATERMELONDB — SINGLE TOPIC BLOCK ======= -->
+  <div class="topic-block" id="rn8-watermelondb" style="padding:0; background:transparent; border:none;">
+
+    <!-- Header -->
+    <div style="display:flex;align-items:center;gap:0.7rem;margin-bottom:1.25rem;padding:1.5rem 1.5rem 0;">
+      <div style="width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,rgba(0,229,255,0.12),rgba(105,240,174,0.1));border:1px solid rgba(0,229,255,0.18);display:flex;align-items:center;justify-content:center;font-size:1.4rem;">🍉</div>
       <div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;font-weight:600;color:var(--accent-cyan);text-transform:uppercase;letter-spacing:0.15em;">High-Performance Local Database</div>
-        <div style="font-size:1.25rem;font-weight:700;">WatermelonDB — Complete Setup Guide</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;font-weight:700;color:var(--accent-cyan);text-transform:uppercase;letter-spacing:0.15em;">High-Performance Local Database</div>
+        <div style="font-size:1.35rem;font-weight:800;letter-spacing:-0.02em;">WatermelonDB — Complete Setup Guide</div>
       </div>
     </div>
-  </div>
 
-  <div class="topic-block" id="rn8-wm-intro">
-    <div class="topic-title">Why WatermelonDB?</div>
-    <div class="topic-desc">
-      WatermelonDB is a <strong>reactive, high-performance database</strong> for React Native built on SQLite. It's designed for apps with <strong>thousands to millions of records</strong> — unlike AsyncStorage or raw SQLite, it loads data lazily and re-renders components reactively when data changes.
+    <!-- Internal section nav -->
+    <div style="display:flex;flex-wrap:wrap;gap:0.35rem;padding:0 1.5rem 1.25rem;border-bottom:1px solid var(--border-color);margin-bottom:1.5rem;">
+      <a href="#wm-sec-intro" style="font-size:0.65rem;padding:0.2rem 0.55rem;border-radius:4px;background:rgba(0,229,255,0.06);border:1px solid rgba(0,229,255,0.12);color:var(--accent-cyan);text-decoration:none;font-weight:600;">① Intro</a>
+      <a href="#wm-sec-setup" style="font-size:0.65rem;padding:0.2rem 0.55rem;border-radius:4px;background:rgba(105,240,174,0.06);border:1px solid rgba(105,240,174,0.12);color:var(--accent-green);text-decoration:none;font-weight:600;">② Setup</a>
+      <a href="#wm-sec-schema" style="font-size:0.65rem;padding:0.2rem 0.55rem;border-radius:4px;background:rgba(83,109,254,0.06);border:1px solid rgba(83,109,254,0.12);color:var(--accent-blue);text-decoration:none;font-weight:600;">③ Schema & Models</a>
+      <a href="#wm-sec-crud" style="font-size:0.65rem;padding:0.2rem 0.55rem;border-radius:4px;background:rgba(255,171,64,0.06);border:1px solid rgba(255,171,64,0.12);color:var(--accent-orange);text-decoration:none;font-weight:600;">④ CRUD</a>
+      <a href="#wm-sec-observe" style="font-size:0.65rem;padding:0.2rem 0.55rem;border-radius:4px;background:rgba(179,136,255,0.06);border:1px solid rgba(179,136,255,0.12);color:var(--accent-purple);text-decoration:none;font-weight:600;">⑤ Reactive</a>
+      <a href="#wm-sec-relations" style="font-size:0.65rem;padding:0.2rem 0.55rem;border-radius:4px;background:rgba(255,128,171,0.06);border:1px solid rgba(255,128,171,0.12);color:var(--accent-pink);text-decoration:none;font-weight:600;">⑥ Queries</a>
+      <a href="#wm-sec-sync" style="font-size:0.65rem;padding:0.2rem 0.55rem;border-radius:4px;background:rgba(255,82,82,0.06);border:1px solid rgba(255,82,82,0.12);color:var(--accent-red);text-decoration:none;font-weight:600;">⑦ Sync</a>
+      <a href="#wm-sec-fullapp" style="font-size:0.65rem;padding:0.2rem 0.55rem;border-radius:4px;background:rgba(255,215,64,0.06);border:1px solid rgba(255,215,64,0.12);color:var(--accent-yellow);text-decoration:none;font-weight:600;">⑧ Full App</a>
     </div>
-    <table class="topic-table">
-      <tr><th>Feature</th><th>AsyncStorage</th><th>Raw SQLite</th><th>WatermelonDB</th></tr>
-      <tr><td>Data Size</td><td>Small (KBs)</td><td>Large (MBs)</td><td><code>Large (MBs–GBs)</code></td></tr>
-      <tr><td>Reactive</td><td>❌ No</td><td>❌ No</td><td><code>✅ Yes (Observable)</code></td></tr>
-      <tr><td>Lazy Loading</td><td>❌ No</td><td>❌ Manual</td><td><code>✅ Automatic</code></td></tr>
-      <tr><td>Relations</td><td>❌ No</td><td>Manual JOINs</td><td><code>✅ Declarative</code></td></tr>
-      <tr><td>Schema</td><td>Key-value</td><td>Raw SQL</td><td><code>✅ ORM (Models)</code></td></tr>
-      <tr><td>Sync</td><td>❌ No</td><td>❌ Manual</td><td><code>✅ Built-in sync protocol</code></td></tr>
-      <tr><td>Performance (10K+)</td><td>🐢 Slow</td><td>⚡ Fast</td><td><code>⚡ Fast + Lazy</code></td></tr>
-      <tr><td>Thread</td><td>JS Thread</td><td>JS Thread</td><td><code>Native Thread (JSI)</code></td></tr>
-    </table>
-    <div class="callout tip">
-      <div class="callout-label">When to use WatermelonDB</div>
-      Offline-first apps, apps with complex data relationships (e.g., CRM, task managers, note-taking apps, chat apps), or any app handling thousands of records that need real-time UI updates.
-    </div>
-  </div>
 
-  <div class="topic-block" id="rn8-wm-setup">
-    <div class="topic-title">Step 1: Installation & Native Setup</div>
-    <div class="code-block">
-      <div class="code-header"><span class="code-lang">bash</span><span class="code-file">Terminal</span></div>
-      <div class="code-body"><pre><span class="cm"># Install WatermelonDB</span>
+    <!-- ① INTRO -->
+    <div id="wm-sec-intro" style="padding:0 1.5rem 2rem;">
+      <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
+        <span style="font-size:0.65rem;font-weight:800;color:var(--accent-cyan);background:rgba(0,229,255,0.08);padding:0.15rem 0.45rem;border-radius:4px;font-family:'JetBrains Mono',monospace;">SECTION ①</span>
+        <span style="font-size:1.05rem;font-weight:700;">Why WatermelonDB?</span>
+      </div>
+      <div class="topic-desc">
+        WatermelonDB is a <strong>reactive, high-performance database</strong> for React Native built on SQLite. It's designed for apps with <strong>thousands to millions of records</strong> — unlike AsyncStorage or raw SQLite, it loads data lazily and re-renders components reactively when data changes.
+      </div>
+      <table class="topic-table">
+        <tr><th>Feature</th><th>AsyncStorage</th><th>Raw SQLite</th><th>WatermelonDB</th></tr>
+        <tr><td>Data Size</td><td>Small (KBs)</td><td>Large (MBs)</td><td><code>Large (MBs–GBs)</code></td></tr>
+        <tr><td>Reactive</td><td>❌ No</td><td>❌ No</td><td><code>✅ Yes (Observable)</code></td></tr>
+        <tr><td>Lazy Loading</td><td>❌ No</td><td>❌ Manual</td><td><code>✅ Automatic</code></td></tr>
+        <tr><td>Relations</td><td>❌ No</td><td>Manual JOINs</td><td><code>✅ Declarative</code></td></tr>
+        <tr><td>Schema</td><td>Key-value</td><td>Raw SQL</td><td><code>✅ ORM (Models)</code></td></tr>
+        <tr><td>Sync</td><td>❌ No</td><td>❌ Manual</td><td><code>✅ Built-in sync protocol</code></td></tr>
+        <tr><td>Performance (10K+)</td><td>🐢 Slow</td><td>⚡ Fast</td><td><code>⚡ Fast + Lazy</code></td></tr>
+        <tr><td>Thread</td><td>JS Thread</td><td>JS Thread</td><td><code>Native Thread (JSI)</code></td></tr>
+      </table>
+      <div class="callout tip">
+        <div class="callout-label">When to use WatermelonDB</div>
+        Offline-first apps, apps with complex data relationships (e.g., CRM, task managers, note-taking apps, chat apps), or any app handling thousands of records that need real-time UI updates.
+      </div>
+    </div>
+
+    <!-- ② SETUP -->
+    <div id="wm-sec-setup" style="padding:0 1.5rem 2rem;border-top:1px dashed var(--border-color);padding-top:1.5rem;">
+      <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
+        <span style="font-size:0.65rem;font-weight:800;color:var(--accent-green);background:rgba(105,240,174,0.08);padding:0.15rem 0.45rem;border-radius:4px;font-family:'JetBrains Mono',monospace;">SECTION ②</span>
+        <span style="font-size:1.05rem;font-weight:700;">Installation & Native Setup</span>
+      </div>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">bash</span><span class="code-file">Terminal</span></div>
+        <div class="code-body"><pre><span class="cm"># Install WatermelonDB</span>
 <span class="fn">npm</span> install @nozbe/watermelondb
 
 <span class="cm"># Install the decorator support (required for Models)</span>
@@ -2400,19 +2414,19 @@ db.<span class="fn">transaction</span>((tx) =&gt; {
 
 <span class="cm"># iOS pods</span>
 <span class="fn">cd</span> ios &amp;&amp; <span class="fn">pod</span> install &amp;&amp; <span class="fn">cd</span> ..</pre></div>
-    </div>
-    <div class="code-block">
-      <div class="code-header"><span class="code-lang">js</span><span class="code-file">babel.config.js</span></div>
-      <div class="code-body"><pre>module.exports = {
+      </div>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">js</span><span class="code-file">babel.config.js</span></div>
+        <div class="code-body"><pre>module.exports = {
   <span class="prop">presets</span>: [<span class="str">'module:@react-native/babel-preset'</span>],
   <span class="prop">plugins</span>: [
     [<span class="str">'@babel/plugin-proposal-decorators'</span>, { <span class="prop">legacy</span>: <span class="kw">true</span> }],
   ],
 };</pre></div>
-    </div>
-    <div class="code-block">
-      <div class="code-header"><span class="code-lang">jsx</span><span class="code-file">src/db/index.ts — Database Initialization</span></div>
-      <div class="code-body"><pre><span class="kw">import</span> { <span class="comp">Database</span> } <span class="kw">from</span> <span class="str">'@nozbe/watermelondb'</span>;
+      </div>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">jsx</span><span class="code-file">src/db/index.ts — Database Initialization</span></div>
+        <div class="code-body"><pre><span class="kw">import</span> { <span class="comp">Database</span> } <span class="kw">from</span> <span class="str">'@nozbe/watermelondb'</span>;
 <span class="kw">import</span> <span class="comp">SQLiteAdapter</span> <span class="kw">from</span> <span class="str">'@nozbe/watermelondb/adapters/sqlite'</span>;
 <span class="kw">import</span> { mySchema } <span class="kw">from</span> <span class="str">'./schema'</span>;
 <span class="kw">import</span> { <span class="comp">Post</span> } <span class="kw">from</span> <span class="str">'./models/Post'</span>;
@@ -2434,15 +2448,19 @@ db.<span class="fn">transaction</span>((tx) =&gt; {
 });
 
 <span class="kw">export default</span> database;</pre></div>
+      </div>
     </div>
-  </div>
 
-  <div class="topic-block" id="rn8-wm-schema">
-    <div class="topic-title">Step 2: Define Schema & Models</div>
-    <div class="topic-desc">WatermelonDB uses a <strong>schema</strong> (table definitions) and <strong>models</strong> (ORM classes). The schema is version-controlled for migrations.</div>
-    <div class="code-block">
-      <div class="code-header"><span class="code-lang">jsx</span><span class="code-file">src/db/schema.ts — Table Definitions</span></div>
-      <div class="code-body"><pre><span class="kw">import</span> { <span class="fn">appSchema</span>, <span class="fn">tableSchema</span> } <span class="kw">from</span> <span class="str">'@nozbe/watermelondb'</span>;
+    <!-- ③ SCHEMA & MODELS -->
+    <div id="wm-sec-schema" style="padding:0 1.5rem 2rem;border-top:1px dashed var(--border-color);padding-top:1.5rem;">
+      <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
+        <span style="font-size:0.65rem;font-weight:800;color:var(--accent-blue);background:rgba(83,109,254,0.08);padding:0.15rem 0.45rem;border-radius:4px;font-family:'JetBrains Mono',monospace;">SECTION ③</span>
+        <span style="font-size:1.05rem;font-weight:700;">Schema & Models</span>
+      </div>
+      <div class="topic-desc">WatermelonDB uses a <strong>schema</strong> (table definitions) and <strong>models</strong> (ORM classes). The schema is version-controlled for migrations.</div>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">jsx</span><span class="code-file">src/db/schema.ts — Table Definitions</span></div>
+        <div class="code-body"><pre><span class="kw">import</span> { <span class="fn">appSchema</span>, <span class="fn">tableSchema</span> } <span class="kw">from</span> <span class="str">'@nozbe/watermelondb'</span>;
 
 <span class="kw">export const</span> mySchema = <span class="fn">appSchema</span>({
   <span class="prop">version</span>: <span class="num">1</span>,  <span class="cm">// increment when schema changes</span>
@@ -2453,7 +2471,7 @@ db.<span class="fn">transaction</span>((tx) =&gt; {
         { <span class="prop">name</span>: <span class="str">'title'</span>,      <span class="prop">type</span>: <span class="str">'string'</span> },
         { <span class="prop">name</span>: <span class="str">'body'</span>,       <span class="prop">type</span>: <span class="str">'string'</span> },
         { <span class="prop">name</span>: <span class="str">'is_pinned'</span>,  <span class="prop">type</span>: <span class="str">'boolean'</span> },
-        { <span class="prop">name</span>: <span class="str">'created_at'</span>, <span class="prop">type</span>: <span class="str">'number'</span> },   <span class="cm">// timestamps are numbers</span>
+        { <span class="prop">name</span>: <span class="str">'created_at'</span>, <span class="prop">type</span>: <span class="str">'number'</span> },
         { <span class="prop">name</span>: <span class="str">'updated_at'</span>, <span class="prop">type</span>: <span class="str">'number'</span> },
       ],
     }),
@@ -2461,40 +2479,37 @@ db.<span class="fn">transaction</span>((tx) =&gt; {
       <span class="prop">name</span>: <span class="str">'comments'</span>,
       <span class="prop">columns</span>: [
         { <span class="prop">name</span>: <span class="str">'body'</span>,       <span class="prop">type</span>: <span class="str">'string'</span> },
-        { <span class="prop">name</span>: <span class="str">'post_id'</span>,    <span class="prop">type</span>: <span class="str">'string'</span>, <span class="prop">isIndexed</span>: <span class="kw">true</span> }, <span class="cm">// ← FK index</span>
+        { <span class="prop">name</span>: <span class="str">'post_id'</span>,    <span class="prop">type</span>: <span class="str">'string'</span>, <span class="prop">isIndexed</span>: <span class="kw">true</span> },
         { <span class="prop">name</span>: <span class="str">'created_at'</span>, <span class="prop">type</span>: <span class="str">'number'</span> },
       ],
     }),
   ],
 });</pre></div>
-    </div>
-    <div class="code-block">
-      <div class="code-header"><span class="code-lang">jsx</span><span class="code-file">src/db/models/Post.ts — Post Model</span></div>
-      <div class="code-body"><pre><span class="kw">import</span> { <span class="comp">Model</span> } <span class="kw">from</span> <span class="str">'@nozbe/watermelondb'</span>;
+      </div>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">jsx</span><span class="code-file">src/db/models/Post.ts — Post Model</span></div>
+        <div class="code-body"><pre><span class="kw">import</span> { <span class="comp">Model</span> } <span class="kw">from</span> <span class="str">'@nozbe/watermelondb'</span>;
 <span class="kw">import</span> { <span class="fn">field</span>, <span class="fn">date</span>, <span class="fn">readonly</span>, <span class="fn">children</span> } <span class="kw">from</span> <span class="str">'@nozbe/watermelondb/decorators'</span>;
 
 <span class="kw">export class</span> <span class="comp">Post</span> <span class="kw">extends</span> <span class="comp">Model</span> {
   <span class="kw">static</span> <span class="prop">table</span> = <span class="str">'posts'</span>;
 
-  <span class="cm">// Define associations for relations</span>
   <span class="kw">static</span> <span class="prop">associations</span> = {
     <span class="prop">comments</span>: { <span class="prop">type</span>: <span class="str">'has_many'</span>, <span class="prop">foreignKey</span>: <span class="str">'post_id'</span> },
   };
 
-  <span class="cm">// Column mappings with decorators</span>
   @<span class="fn">field</span>(<span class="str">'title'</span>)      <span class="prop">title</span>;
   @<span class="fn">field</span>(<span class="str">'body'</span>)       <span class="prop">body</span>;
   @<span class="fn">field</span>(<span class="str">'is_pinned'</span>)  <span class="prop">isPinned</span>;
   @<span class="fn">readonly</span> @<span class="fn">date</span>(<span class="str">'created_at'</span>) <span class="prop">createdAt</span>;
   @<span class="fn">date</span>(<span class="str">'updated_at'</span>)  <span class="prop">updatedAt</span>;
 
-  <span class="cm">// Relation: this post's comments</span>
   @<span class="fn">children</span>(<span class="str">'comments'</span>) <span class="prop">comments</span>;
 }</pre></div>
-    </div>
-    <div class="code-block">
-      <div class="code-header"><span class="code-lang">jsx</span><span class="code-file">src/db/models/Comment.ts — Comment Model</span></div>
-      <div class="code-body"><pre><span class="kw">import</span> { <span class="comp">Model</span> } <span class="kw">from</span> <span class="str">'@nozbe/watermelondb'</span>;
+      </div>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">jsx</span><span class="code-file">src/db/models/Comment.ts — Comment Model</span></div>
+        <div class="code-body"><pre><span class="kw">import</span> { <span class="comp">Model</span> } <span class="kw">from</span> <span class="str">'@nozbe/watermelondb'</span>;
 <span class="kw">import</span> { <span class="fn">field</span>, <span class="fn">date</span>, <span class="fn">readonly</span>, <span class="fn">relation</span> } <span class="kw">from</span> <span class="str">'@nozbe/watermelondb/decorators'</span>;
 
 <span class="kw">export class</span> <span class="comp">Comment</span> <span class="kw">extends</span> <span class="comp">Model</span> {
@@ -2508,24 +2523,27 @@ db.<span class="fn">transaction</span>((tx) =&gt; {
   @<span class="fn">field</span>(<span class="str">'post_id'</span>)  <span class="prop">postId</span>;
   @<span class="fn">readonly</span> @<span class="fn">date</span>(<span class="str">'created_at'</span>) <span class="prop">createdAt</span>;
 
-  <span class="cm">// Relation: the parent post</span>
   @<span class="fn">relation</span>(<span class="str">'posts'</span>, <span class="str">'post_id'</span>) <span class="prop">post</span>;
 }</pre></div>
+      </div>
+      <div class="callout info">
+        <div class="callout-label">Decorator Overview</div>
+        <code class="inline">@field</code> — maps to a column, <code class="inline">@date</code> — auto-converts timestamp ↔ Date, <code class="inline">@readonly</code> — cannot be updated after creation, <code class="inline">@children</code> — has_many relation, <code class="inline">@relation</code> — belongs_to relation.
+      </div>
     </div>
-    <div class="callout info">
-      <div class="callout-label">Decorator Overview</div>
-      <code class="inline">@field</code> — maps to a column, <code class="inline">@date</code> — auto-converts timestamp ↔ Date, <code class="inline">@readonly</code> — cannot be updated after creation, <code class="inline">@children</code> — has_many relation, <code class="inline">@relation</code> — belongs_to relation.
-    </div>
-  </div>
 
-  <div class="topic-block" id="rn8-wm-crud">
-    <div class="topic-title">Step 3: CRUD Operations</div>
-    <div class="topic-desc">All write operations happen inside <code class="inline">database.write()</code> — WatermelonDB batches them for performance.</div>
-    <div class="code-block">
-      <div class="code-header"><span class="code-lang">jsx</span><span class="code-file">src/db/actions.ts — CRUD Helpers</span></div>
-      <div class="code-body"><pre><span class="kw">import</span> database <span class="kw">from</span> <span class="str">'./index'</span>;
+    <!-- ④ CRUD -->
+    <div id="wm-sec-crud" style="padding:0 1.5rem 2rem;border-top:1px dashed var(--border-color);padding-top:1.5rem;">
+      <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
+        <span style="font-size:0.65rem;font-weight:800;color:var(--accent-orange);background:rgba(255,171,64,0.08);padding:0.15rem 0.45rem;border-radius:4px;font-family:'JetBrains Mono',monospace;">SECTION ④</span>
+        <span style="font-size:1.05rem;font-weight:700;">CRUD Operations</span>
+      </div>
+      <div class="topic-desc">All write operations happen inside <code class="inline">database.write()</code> — WatermelonDB batches them for performance.</div>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">jsx</span><span class="code-file">src/db/actions.ts — CRUD Helpers</span></div>
+        <div class="code-body"><pre><span class="kw">import</span> database <span class="kw">from</span> <span class="str">'./index'</span>;
 
-<span class="cm">// ✅ CREATE — add a new post</span>
+<span class="cm">// ✅ CREATE</span>
 <span class="kw">export const</span> <span class="fn">createPost</span> = <span class="kw">async</span> (title: <span class="type">string</span>, body: <span class="type">string</span>) =&gt; {
   <span class="kw">return await</span> database.<span class="fn">write</span>(<span class="kw">async</span> () =&gt; {
     <span class="kw">const</span> post = <span class="kw">await</span> database.<span class="fn">get</span>(<span class="str">'posts'</span>).<span class="fn">create</span>((p) =&gt; {
@@ -2537,81 +2555,70 @@ db.<span class="fn">transaction</span>((tx) =&gt; {
   });
 };
 
-<span class="cm">// ✅ READ — query all posts</span>
+<span class="cm">// ✅ READ — all posts</span>
 <span class="kw">export const</span> <span class="fn">getAllPosts</span> = <span class="kw">async</span> () =&gt; {
   <span class="kw">return await</span> database.<span class="fn">get</span>(<span class="str">'posts'</span>).<span class="fn">query</span>().<span class="fn">fetch</span>();
 };
 
-<span class="cm">// ✅ READ — query with filters</span>
+<span class="cm">// ✅ READ — with filters</span>
 <span class="kw">import</span> { <span class="fn">Q</span> } <span class="kw">from</span> <span class="str">'@nozbe/watermelondb'</span>;
 
 <span class="kw">export const</span> <span class="fn">getPinnedPosts</span> = <span class="kw">async</span> () =&gt; {
-  <span class="kw">return await</span> database
-    .<span class="fn">get</span>(<span class="str">'posts'</span>)
-    .<span class="fn">query</span>(
-      <span class="fn">Q</span>.<span class="fn">where</span>(<span class="str">'is_pinned'</span>, <span class="kw">true</span>),
-      <span class="fn">Q</span>.<span class="fn">sortBy</span>(<span class="str">'created_at'</span>, <span class="fn">Q</span>.desc),
-      <span class="fn">Q</span>.<span class="fn">take</span>(<span class="num">20</span>)
-    )
+  <span class="kw">return await</span> database.<span class="fn">get</span>(<span class="str">'posts'</span>)
+    .<span class="fn">query</span>(<span class="fn">Q</span>.<span class="fn">where</span>(<span class="str">'is_pinned'</span>, <span class="kw">true</span>), <span class="fn">Q</span>.<span class="fn">sortBy</span>(<span class="str">'created_at'</span>, <span class="fn">Q</span>.desc), <span class="fn">Q</span>.<span class="fn">take</span>(<span class="num">20</span>))
     .<span class="fn">fetch</span>();
 };
 
-<span class="cm">// ✅ UPDATE — modify a post</span>
+<span class="cm">// ✅ UPDATE</span>
 <span class="kw">export const</span> <span class="fn">updatePost</span> = <span class="kw">async</span> (post, newTitle: <span class="type">string</span>) =&gt; {
   <span class="kw">await</span> database.<span class="fn">write</span>(<span class="kw">async</span> () =&gt; {
-    <span class="kw">await</span> post.<span class="fn">update</span>((p) =&gt; {
-      p.<span class="prop">title</span> = newTitle;
-    });
+    <span class="kw">await</span> post.<span class="fn">update</span>((p) =&gt; { p.<span class="prop">title</span> = newTitle; });
   });
 };
 
-<span class="cm">// ✅ DELETE — remove a post</span>
+<span class="cm">// ✅ DELETE (soft — for sync)</span>
 <span class="kw">export const</span> <span class="fn">deletePost</span> = <span class="kw">async</span> (post) =&gt; {
   <span class="kw">await</span> database.<span class="fn">write</span>(<span class="kw">async</span> () =&gt; {
-    <span class="kw">await</span> post.<span class="fn">markAsDeleted</span>();  <span class="cm">// soft delete (for sync)</span>
-    <span class="cm">// OR: await post.destroyPermanently(); // hard delete</span>
+    <span class="kw">await</span> post.<span class="fn">markAsDeleted</span>();
+    <span class="cm">// OR: await post.destroyPermanently();</span>
   });
 };
 
 <span class="cm">// ✅ BATCH — multiple writes in one transaction</span>
 <span class="kw">export const</span> <span class="fn">createPostWithComments</span> = <span class="kw">async</span> (title, body, commentTexts) =&gt; {
   <span class="kw">await</span> database.<span class="fn">write</span>(<span class="kw">async</span> () =&gt; {
-    <span class="kw">const</span> postsCollection = database.<span class="fn">get</span>(<span class="str">'posts'</span>);
-    <span class="kw">const</span> commentsCollection = database.<span class="fn">get</span>(<span class="str">'comments'</span>);
-
-    <span class="kw">const</span> post = postsCollection.<span class="fn">prepareCreate</span>((p) =&gt; {
-      p.<span class="prop">title</span> = title;
-      p.<span class="prop">body</span> = body;
+    <span class="kw">const</span> post = database.<span class="fn">get</span>(<span class="str">'posts'</span>).<span class="fn">prepareCreate</span>((p) =&gt; {
+      p.<span class="prop">title</span> = title; p.<span class="prop">body</span> = body;
     });
-
     <span class="kw">const</span> comments = commentTexts.<span class="fn">map</span>((text) =&gt;
-      commentsCollection.<span class="fn">prepareCreate</span>((c) =&gt; {
-        c.<span class="prop">body</span> = text;
-        c.<span class="prop">postId</span> = post.id;
+      database.<span class="fn">get</span>(<span class="str">'comments'</span>).<span class="fn">prepareCreate</span>((c) =&gt; {
+        c.<span class="prop">body</span> = text; c.<span class="prop">postId</span> = post.id;
       })
     );
-
-    <span class="cm">// Execute all at once — super fast!</span>
     <span class="kw">await</span> database.<span class="fn">batch</span>(post, ...comments);
   });
 };</pre></div>
+      </div>
+      <div class="callout warn">
+        <div class="callout-label">Important: database.write()</div>
+        Every create, update, delete <strong>must</strong> be inside <code class="inline">database.write()</code>. Writes are serialized and batched for safety. Reads (<code class="inline">.query().fetch()</code>) do NOT need a write block.
+      </div>
     </div>
-    <div class="callout warn">
-      <div class="callout-label">Important: database.write()</div>
-      Every create, update, delete <strong>must</strong> be inside <code class="inline">database.write()</code>. WatermelonDB uses a writer queue — writes are serialized and batched for safety and performance. Reads (<code class="inline">.query().fetch()</code>) do NOT need a write block.
-    </div>
-  </div>
 
-  <div class="topic-block" id="rn8-wm-observe">
-    <div class="topic-title">Step 4: Reactive Queries (observe)</div>
-    <div class="topic-desc">The killer feature — <code class="inline">observe()</code> returns an <strong>RxJS Observable</strong>. Your component re-renders automatically when data changes. Use the <code class="inline">withObservables</code> HOC or hooks.</div>
-    <div class="code-block">
-      <div class="code-header"><span class="code-lang">jsx</span><span class="code-file">Using observe() with the enhanced component</span></div>
-      <div class="code-body"><pre><span class="kw">import</span> { <span class="fn">withObservables</span> } <span class="kw">from</span> <span class="str">'@nozbe/watermelondb/react'</span>;
+    <!-- ⑤ REACTIVE QUERIES -->
+    <div id="wm-sec-observe" style="padding:0 1.5rem 2rem;border-top:1px dashed var(--border-color);padding-top:1.5rem;">
+      <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
+        <span style="font-size:0.65rem;font-weight:800;color:var(--accent-purple);background:rgba(179,136,255,0.08);padding:0.15rem 0.45rem;border-radius:4px;font-family:'JetBrains Mono',monospace;">SECTION ⑤</span>
+        <span style="font-size:1.05rem;font-weight:700;">Reactive Queries (observe)</span>
+      </div>
+      <div class="topic-desc">The killer feature — <code class="inline">observe()</code> returns an <strong>RxJS Observable</strong>. Components re-render automatically when data changes.</div>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">jsx</span><span class="code-file">Enhanced component with live data</span></div>
+        <div class="code-body"><pre><span class="kw">import</span> { <span class="fn">withObservables</span> } <span class="kw">from</span> <span class="str">'@nozbe/watermelondb/react'</span>;
 <span class="kw">import</span> database <span class="kw">from</span> <span class="str">'../db'</span>;
 <span class="kw">import</span> { <span class="fn">Q</span> } <span class="kw">from</span> <span class="str">'@nozbe/watermelondb'</span>;
 
-<span class="cm">// ✅ Raw component — receives data as props</span>
+<span class="cm">// Raw component — receives data as props</span>
 <span class="kw">const</span> <span class="fn">PostList</span> = ({ posts }) =&gt; (
   <span class="op">&lt;</span><span class="jsx-tag">FlatList</span>
     <span class="attr">data</span>={posts}
@@ -2625,164 +2632,147 @@ db.<span class="fn">transaction</span>((tx) =&gt; {
   <span class="op">/&gt;</span>
 );
 
-<span class="cm">// ✅ Enhanced with live observable — auto-updates on data change!</span>
+<span class="cm">// ✅ Enhanced — auto-updates when ANY post changes</span>
 <span class="kw">const</span> enhance = <span class="fn">withObservables</span>([], () =&gt; ({
-  <span class="prop">posts</span>: database
-    .<span class="fn">get</span>(<span class="str">'posts'</span>)
+  <span class="prop">posts</span>: database.<span class="fn">get</span>(<span class="str">'posts'</span>)
     .<span class="fn">query</span>(<span class="fn">Q</span>.<span class="fn">sortBy</span>(<span class="str">'created_at'</span>, <span class="fn">Q</span>.desc))
-    .<span class="fn">observe</span>(),  <span class="cm">// ← returns Observable, NOT a Promise</span>
+    .<span class="fn">observe</span>(),   <span class="cm">// ← Observable, NOT a Promise</span>
 }));
 
 <span class="kw">export default</span> <span class="fn">enhance</span>(PostList);</pre></div>
-    </div>
-    <div class="code-block">
-      <div class="code-header"><span class="code-lang">jsx</span><span class="code-file">Observe a single record + its relations</span></div>
-      <div class="code-body"><pre><span class="cm">// Single post detail with live comments</span>
-<span class="kw">const</span> <span class="fn">PostDetail</span> = ({ post, comments }) =&gt; (
+      </div>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">jsx</span><span class="code-file">Observe a single record + its relations</span></div>
+        <div class="code-body"><pre><span class="kw">const</span> <span class="fn">PostDetail</span> = ({ post, comments }) =&gt; (
   <span class="op">&lt;</span><span class="jsx-tag">View</span><span class="op">&gt;</span>
     <span class="op">&lt;</span><span class="jsx-tag">Text</span> <span class="attr">style</span>={{ <span class="prop">fontSize</span>: <span class="num">24</span> }}<span class="op">&gt;</span>{post.title}<span class="op">&lt;/</span><span class="jsx-tag">Text</span><span class="op">&gt;</span>
     <span class="op">&lt;</span><span class="jsx-tag">Text</span><span class="op">&gt;</span>{post.body}<span class="op">&lt;/</span><span class="jsx-tag">Text</span><span class="op">&gt;</span>
     <span class="op">&lt;</span><span class="jsx-tag">Text</span><span class="op">&gt;</span>{comments.length} comments<span class="op">&lt;/</span><span class="jsx-tag">Text</span><span class="op">&gt;</span>
-    {comments.<span class="fn">map</span>((c) =&gt; (
-      <span class="op">&lt;</span><span class="jsx-tag">Text</span> <span class="attr">key</span>={c.id}<span class="op">&gt;</span>💬 {c.body}<span class="op">&lt;/</span><span class="jsx-tag">Text</span><span class="op">&gt;</span>
-    ))}
+    {comments.<span class="fn">map</span>((c) =&gt; <span class="op">&lt;</span><span class="jsx-tag">Text</span> <span class="attr">key</span>={c.id}<span class="op">&gt;</span>💬 {c.body}<span class="op">&lt;/</span><span class="jsx-tag">Text</span><span class="op">&gt;</span>)}
   <span class="op">&lt;/</span><span class="jsx-tag">View</span><span class="op">&gt;</span>
 );
 
 <span class="kw">const</span> enhance = <span class="fn">withObservables</span>([<span class="str">'post'</span>], ({ post }) =&gt; ({
-  <span class="prop">post</span>: post.<span class="fn">observe</span>(),          <span class="cm">// live updates to this post</span>
-  <span class="prop">comments</span>: post.comments.<span class="fn">observe</span>(), <span class="cm">// live child comments</span>
+  <span class="prop">post</span>: post.<span class="fn">observe</span>(),
+  <span class="prop">comments</span>: post.comments.<span class="fn">observe</span>(),
 }));
 
 <span class="kw">export default</span> <span class="fn">enhance</span>(PostDetail);</pre></div>
+      </div>
+      <div class="callout tip">
+        <div class="callout-label">observe() vs fetch()</div>
+        <code class="inline">.fetch()</code> → runs query ONCE, returns a Promise (static snapshot).<br>
+        <code class="inline">.observe()</code> → returns Observable that emits new data on change. <strong>Always prefer observe() in components.</strong>
+      </div>
     </div>
-    <div class="callout tip">
-      <div class="callout-label">observe() vs fetch()</div>
-      <code class="inline">.fetch()</code> → runs query ONCE, returns a Promise (static snapshot).<br>
-      <code class="inline">.observe()</code> → returns an Observable that emits new data whenever the underlying records change. <strong>Always prefer observe() in components</strong> for real-time UI.
-    </div>
-  </div>
 
-  <div class="topic-block" id="rn8-wm-relations">
-    <div class="topic-title">Step 5: Relations & Queries</div>
-    <div class="code-block">
-      <div class="code-header"><span class="code-lang">jsx</span><span class="code-file">Advanced query examples</span></div>
-      <div class="code-body"><pre><span class="kw">import</span> { <span class="fn">Q</span> } <span class="kw">from</span> <span class="str">'@nozbe/watermelondb'</span>;
+    <!-- ⑥ RELATIONS & QUERIES -->
+    <div id="wm-sec-relations" style="padding:0 1.5rem 2rem;border-top:1px dashed var(--border-color);padding-top:1.5rem;">
+      <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
+        <span style="font-size:0.65rem;font-weight:800;color:var(--accent-pink);background:rgba(255,128,171,0.08);padding:0.15rem 0.45rem;border-radius:4px;font-family:'JetBrains Mono',monospace;">SECTION ⑥</span>
+        <span style="font-size:1.05rem;font-weight:700;">Relations & Advanced Queries</span>
+      </div>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">jsx</span><span class="code-file">Query clause examples</span></div>
+        <div class="code-body"><pre><span class="kw">import</span> { <span class="fn">Q</span> } <span class="kw">from</span> <span class="str">'@nozbe/watermelondb'</span>;
 
-<span class="cm">// ✅ WHERE clause</span>
+<span class="cm">// WHERE</span>
+database.<span class="fn">get</span>(<span class="str">'posts'</span>).<span class="fn">query</span>(<span class="fn">Q</span>.<span class="fn">where</span>(<span class="str">'is_pinned'</span>, <span class="kw">true</span>));
+
+<span class="cm">// AND</span>
 database.<span class="fn">get</span>(<span class="str">'posts'</span>).<span class="fn">query</span>(
-  <span class="fn">Q</span>.<span class="fn">where</span>(<span class="str">'is_pinned'</span>, <span class="kw">true</span>)
+  <span class="fn">Q</span>.<span class="fn">and</span>(<span class="fn">Q</span>.<span class="fn">where</span>(<span class="str">'is_pinned'</span>, <span class="kw">true</span>), <span class="fn">Q</span>.<span class="fn">where</span>(<span class="str">'title'</span>, <span class="fn">Q</span>.<span class="fn">like</span>(<span class="str">`%${term}%`</span>)))
 );
 
-<span class="cm">// ✅ AND — multiple conditions</span>
+<span class="cm">// OR</span>
 database.<span class="fn">get</span>(<span class="str">'posts'</span>).<span class="fn">query</span>(
-  <span class="fn">Q</span>.<span class="fn">and</span>(
-    <span class="fn">Q</span>.<span class="fn">where</span>(<span class="str">'is_pinned'</span>, <span class="kw">true</span>),
-    <span class="fn">Q</span>.<span class="fn">where</span>(<span class="str">'title'</span>, <span class="fn">Q</span>.<span class="fn">like</span>(<span class="str">`%${searchTerm}%`</span>))
-  )
+  <span class="fn">Q</span>.<span class="fn">or</span>(<span class="fn">Q</span>.<span class="fn">where</span>(<span class="str">'is_pinned'</span>, <span class="kw">true</span>), <span class="fn">Q</span>.<span class="fn">where</span>(<span class="str">'title'</span>, <span class="fn">Q</span>.<span class="fn">like</span>(<span class="str">'%important%'</span>)))
 );
 
-<span class="cm">// ✅ OR conditions</span>
-database.<span class="fn">get</span>(<span class="str">'posts'</span>).<span class="fn">query</span>(
-  <span class="fn">Q</span>.<span class="fn">or</span>(
-    <span class="fn">Q</span>.<span class="fn">where</span>(<span class="str">'is_pinned'</span>, <span class="kw">true</span>),
-    <span class="fn">Q</span>.<span class="fn">where</span>(<span class="str">'title'</span>, <span class="fn">Q</span>.<span class="fn">like</span>(<span class="str">'%important%'</span>))
-  )
-);
+<span class="cm">// Sort + Limit</span>
+database.<span class="fn">get</span>(<span class="str">'posts'</span>).<span class="fn">query</span>(<span class="fn">Q</span>.<span class="fn">sortBy</span>(<span class="str">'created_at'</span>, <span class="fn">Q</span>.desc), <span class="fn">Q</span>.<span class="fn">take</span>(<span class="num">10</span>));
 
-<span class="cm">// ✅ Sort + Limit</span>
-database.<span class="fn">get</span>(<span class="str">'posts'</span>).<span class="fn">query</span>(
-  <span class="fn">Q</span>.<span class="fn">sortBy</span>(<span class="str">'created_at'</span>, <span class="fn">Q</span>.desc),
-  <span class="fn">Q</span>.<span class="fn">take</span>(<span class="num">10</span>)
-);
+<span class="cm">// Count (fast — no full record load)</span>
+<span class="kw">const</span> count = <span class="kw">await</span> database.<span class="fn">get</span>(<span class="str">'posts'</span>)
+  .<span class="fn">query</span>(<span class="fn">Q</span>.<span class="fn">where</span>(<span class="str">'is_pinned'</span>, <span class="kw">true</span>)).<span class="fn">fetchCount</span>();
 
-<span class="cm">// ✅ Count (fast — doesn't load full records)</span>
-<span class="kw">const</span> count = <span class="kw">await</span> database
-  .<span class="fn">get</span>(<span class="str">'posts'</span>)
-  .<span class="fn">query</span>(<span class="fn">Q</span>.<span class="fn">where</span>(<span class="str">'is_pinned'</span>, <span class="kw">true</span>))
-  .<span class="fn">fetchCount</span>();
-
-<span class="cm">// ✅ Find by ID (fast lookup)</span>
+<span class="cm">// Find by ID</span>
 <span class="kw">const</span> post = <span class="kw">await</span> database.<span class="fn">get</span>(<span class="str">'posts'</span>).<span class="fn">find</span>(<span class="str">'some-uuid'</span>);</pre></div>
+      </div>
     </div>
-  </div>
 
-  <div class="topic-block" id="rn8-wm-sync">
-    <div class="topic-title">Step 6: Sync with Backend Server</div>
-    <div class="topic-desc">WatermelonDB has a <strong>built-in sync protocol</strong>. It sends local changes to the server and pulls remote changes — handling conflicts automatically. Your backend just needs to implement the sync endpoint.</div>
-    <div class="code-block">
-      <div class="code-header"><span class="code-lang">jsx</span><span class="code-file">src/db/sync.ts</span></div>
-      <div class="code-body"><pre><span class="kw">import</span> { <span class="fn">synchronize</span> } <span class="kw">from</span> <span class="str">'@nozbe/watermelondb/sync'</span>;
+    <!-- ⑦ SYNC -->
+    <div id="wm-sec-sync" style="padding:0 1.5rem 2rem;border-top:1px dashed var(--border-color);padding-top:1.5rem;">
+      <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
+        <span style="font-size:0.65rem;font-weight:800;color:var(--accent-red);background:rgba(255,82,82,0.08);padding:0.15rem 0.45rem;border-radius:4px;font-family:'JetBrains Mono',monospace;">SECTION ⑦</span>
+        <span style="font-size:1.05rem;font-weight:700;">Sync with Backend Server</span>
+      </div>
+      <div class="topic-desc">WatermelonDB has a <strong>built-in sync protocol</strong>. It sends local changes to the server and pulls remote changes — handling conflicts automatically.</div>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">jsx</span><span class="code-file">src/db/sync.ts</span></div>
+        <div class="code-body"><pre><span class="kw">import</span> { <span class="fn">synchronize</span> } <span class="kw">from</span> <span class="str">'@nozbe/watermelondb/sync'</span>;
 <span class="kw">import</span> database <span class="kw">from</span> <span class="str">'./index'</span>;
 
 <span class="kw">export const</span> <span class="fn">syncDatabase</span> = <span class="kw">async</span> () =&gt; {
   <span class="kw">await</span> <span class="fn">synchronize</span>({
     database,
 
-    <span class="cm">// ✅ PULL — get changes FROM server</span>
-    <span class="prop">pullChanges</span>: <span class="kw">async</span> ({ lastPulledAt, schemaVersion, migration }) =&gt; {
-      <span class="kw">const</span> response = <span class="kw">await</span> <span class="fn">fetch</span>(
-        <span class="str">`https://api.example.com/sync?last_pulled_at=${lastPulledAt}`</span>
+    <span class="cm">// PULL — get changes FROM server</span>
+    <span class="prop">pullChanges</span>: <span class="kw">async</span> ({ lastPulledAt }) =&gt; {
+      <span class="kw">const</span> res = <span class="kw">await</span> <span class="fn">fetch</span>(
+        <span class="str">`https://api.example.com/sync?last=${lastPulledAt}`</span>
       );
-      <span class="kw">if</span> (!response.ok) <span class="kw">throw new</span> <span class="comp">Error</span>(<span class="str">'Sync pull failed'</span>);
-
-      <span class="kw">const</span> { changes, timestamp } = <span class="kw">await</span> response.<span class="fn">json</span>();
+      <span class="kw">const</span> { changes, timestamp } = <span class="kw">await</span> res.<span class="fn">json</span>();
       <span class="kw">return</span> { changes, timestamp };
-      <span class="cm">// changes format:</span>
-      <span class="cm">// { posts:    { created: [...], updated: [...], deleted: ['id1'] },</span>
-      <span class="cm">//   comments: { created: [...], updated: [...], deleted: [] } }</span>
+      <span class="cm">// changes = { posts: { created:[], updated:[], deleted:[] }, ... }</span>
     },
 
-    <span class="cm">// ✅ PUSH — send local changes TO server</span>
+    <span class="cm">// PUSH — send local changes TO server</span>
     <span class="prop">pushChanges</span>: <span class="kw">async</span> ({ changes, lastPulledAt }) =&gt; {
-      <span class="kw">const</span> response = <span class="kw">await</span> <span class="fn">fetch</span>(<span class="str">'https://api.example.com/sync'</span>, {
+      <span class="kw">await</span> <span class="fn">fetch</span>(<span class="str">'https://api.example.com/sync'</span>, {
         <span class="prop">method</span>: <span class="str">'POST'</span>,
         <span class="prop">headers</span>: { <span class="str">'Content-Type'</span>: <span class="str">'application/json'</span> },
         <span class="prop">body</span>: <span class="comp">JSON</span>.<span class="fn">stringify</span>({ changes, lastPulledAt }),
       });
-      <span class="kw">if</span> (!response.ok) <span class="kw">throw new</span> <span class="comp">Error</span>(<span class="str">'Sync push failed'</span>);
     },
 
-    <span class="cm">// Optional: handle migration syncs</span>
     <span class="prop">migrationsEnabledAtVersion</span>: <span class="num">1</span>,
   });
-};
-
-<span class="cm">// Usage: call sync on app focus or pull-to-refresh</span>
-<span class="fn">syncDatabase</span>().<span class="fn">catch</span>((e) =&gt; <span class="fn">console.error</span>(<span class="str">'Sync error:'</span>, e));</pre></div>
+};</pre></div>
+      </div>
+      <div class="callout info">
+        <div class="callout-label">Sync Protocol</div>
+        <strong>Pull</strong>: Server returns { created, updated, deleted } per table since <code class="inline">lastPulledAt</code>.<br>
+        <strong>Push</strong>: Client sends local creates/updates/deletes to server.<br>
+        Use <code class="inline">markAsDeleted()</code> for soft-delete (sync-safe), <code class="inline">destroyPermanently()</code> only after sync.
+      </div>
     </div>
-    <div class="callout info">
-      <div class="callout-label">Sync Protocol</div>
-      <strong>Pull</strong>: Server returns { created, updated, deleted } for each table since <code class="inline">lastPulledAt</code>.<br>
-      <strong>Push</strong>: Client sends local creates/updates/deletes to server.<br>
-      <code class="inline">markAsDeleted()</code> soft-deletes locally so the sync can propagate deletes to the server. Use <code class="inline">destroyPermanently()</code> only after sync.
-    </div>
-  </div>
 
-  <div class="topic-block" id="rn8-wm-component">
-    <div class="topic-title">Full App Example — WatermelonDB</div>
-    <div class="code-block">
-      <div class="code-header"><span class="code-lang">text</span><span class="code-file">Project structure</span></div>
-      <div class="code-body"><pre>src/
+    <!-- ⑧ FULL APP -->
+    <div id="wm-sec-fullapp" style="padding:0 1.5rem 1.5rem;border-top:1px dashed var(--border-color);padding-top:1.5rem;">
+      <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
+        <span style="font-size:0.65rem;font-weight:800;color:var(--accent-yellow);background:rgba(255,215,64,0.08);padding:0.15rem 0.45rem;border-radius:4px;font-family:'JetBrains Mono',monospace;">SECTION ⑧</span>
+        <span style="font-size:1.05rem;font-weight:700;">Full App Example</span>
+      </div>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">text</span><span class="code-file">Project structure</span></div>
+        <div class="code-body"><pre>src/
 ├── db/
 │   ├── index.ts          <span class="cm"># Database + SQLiteAdapter init</span>
 │   ├── schema.ts         <span class="cm"># appSchema (tables + columns)</span>
 │   ├── models/
-│   │   ├── Post.ts       <span class="cm"># Model class with decorators</span>
+│   │   ├── Post.ts       <span class="cm"># Model with decorators</span>
 │   │   └── Comment.ts
-│   ├── actions.ts        <span class="cm"># CRUD helpers (create/update/delete)</span>
+│   ├── actions.ts        <span class="cm"># CRUD helpers</span>
 │   └── sync.ts           <span class="cm"># synchronize() setup</span>
-│
 ├── components/
 │   ├── PostList.tsx       <span class="cm"># withObservables enhanced</span>
-│   ├── PostDetail.tsx     <span class="cm"># Single post + comments</span>
 │   └── CreatePostForm.tsx
-│
 └── App.tsx               <span class="cm"># DatabaseProvider wrapper</span></pre></div>
-    </div>
-    <div class="code-block">
-      <div class="code-header"><span class="code-lang">jsx</span><span class="code-file">App.tsx — DatabaseProvider</span></div>
-      <div class="code-body"><pre><span class="kw">import</span> React <span class="kw">from</span> <span class="str">'react'</span>;
+      </div>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">jsx</span><span class="code-file">App.tsx — DatabaseProvider</span></div>
+        <div class="code-body"><pre><span class="kw">import</span> React <span class="kw">from</span> <span class="str">'react'</span>;
 <span class="kw">import</span> { <span class="comp">DatabaseProvider</span> } <span class="kw">from</span> <span class="str">'@nozbe/watermelondb/react'</span>;
 <span class="kw">import</span> database <span class="kw">from</span> <span class="str">'./src/db'</span>;
 <span class="kw">import</span> <span class="comp">PostList</span> <span class="kw">from</span> <span class="str">'./src/components/PostList'</span>;
@@ -2794,10 +2784,10 @@ database.<span class="fn">get</span>(<span class="str">'posts'</span>).<span cla
 );
 
 <span class="kw">export default</span> App;</pre></div>
-    </div>
-    <div class="code-block">
-      <div class="code-header"><span class="code-lang">jsx</span><span class="code-file">components/CreatePostForm.tsx — Full CRUD screen</span></div>
-      <div class="code-body"><pre><span class="kw">import</span> React, { <span class="fn">useState</span> } <span class="kw">from</span> <span class="str">'react'</span>;
+      </div>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">jsx</span><span class="code-file">components/CreatePostForm.tsx</span></div>
+        <div class="code-body"><pre><span class="kw">import</span> React, { <span class="fn">useState</span> } <span class="kw">from</span> <span class="str">'react'</span>;
 <span class="kw">import</span> { View, TextInput, Button, Alert } <span class="kw">from</span> <span class="str">'react-native'</span>;
 <span class="kw">import</span> { <span class="fn">useDatabase</span> } <span class="kw">from</span> <span class="str">'@nozbe/watermelondb/react'</span>;
 
@@ -2805,65 +2795,41 @@ database.<span class="fn">get</span>(<span class="str">'posts'</span>).<span cla
   <span class="kw">const</span> database = <span class="fn">useDatabase</span>();
   <span class="kw">const</span> [title, setTitle] = <span class="fn">useState</span>(<span class="str">''</span>);
   <span class="kw">const</span> [body, setBody] = <span class="fn">useState</span>(<span class="str">''</span>);
-  <span class="kw">const</span> [loading, setLoading] = <span class="fn">useState</span>(<span class="kw">false</span>);
 
   <span class="kw">const</span> <span class="fn">handleCreate</span> = <span class="kw">async</span> () =&gt; {
     <span class="kw">if</span> (!title.trim()) <span class="kw">return</span>;
-    setLoading(<span class="kw">true</span>);
     <span class="kw">try</span> {
       <span class="kw">await</span> database.<span class="fn">write</span>(<span class="kw">async</span> () =&gt; {
-        <span class="kw">await</span> database.<span class="fn">get</span>(<span class="str">'posts'</span>).<span class="fn">create</span>((post) =&gt; {
-          post.<span class="prop">title</span> = title;
-          post.<span class="prop">body</span> = body;
-          post.<span class="prop">isPinned</span> = <span class="kw">false</span>;
+        <span class="kw">await</span> database.<span class="fn">get</span>(<span class="str">'posts'</span>).<span class="fn">create</span>((p) =&gt; {
+          p.<span class="prop">title</span> = title;
+          p.<span class="prop">body</span> = body;
+          p.<span class="prop">isPinned</span> = <span class="kw">false</span>;
         });
       });
-      <span class="fn">setTitle</span>(<span class="str">''</span>);
-      <span class="fn">setBody</span>(<span class="str">''</span>);
+      <span class="fn">setTitle</span>(<span class="str">''</span>); <span class="fn">setBody</span>(<span class="str">''</span>);
       <span class="comp">Alert</span>.<span class="fn">alert</span>(<span class="str">'✅ Post created!'</span>);
     } <span class="kw">catch</span> (e) {
       <span class="comp">Alert</span>.<span class="fn">alert</span>(<span class="str">'Error'</span>, e.message);
-    } <span class="kw">finally</span> {
-      setLoading(<span class="kw">false</span>);
     }
-  };
-
-  <span class="kw">const</span> <span class="fn">handleDelete</span> = <span class="kw">async</span> (post) =&gt; {
-    <span class="kw">await</span> database.<span class="fn">write</span>(<span class="kw">async</span> () =&gt; {
-      <span class="kw">await</span> post.<span class="fn">markAsDeleted</span>();
-    });
   };
 
   <span class="kw">return</span> (
     <span class="op">&lt;</span><span class="jsx-tag">View</span> <span class="attr">style</span>={{ <span class="prop">padding</span>: <span class="num">20</span> }}<span class="op">&gt;</span>
-      <span class="op">&lt;</span><span class="jsx-tag">TextInput</span>
-        <span class="attr">value</span>={title}
-        <span class="attr">onChangeText</span>={setTitle}
-        <span class="attr">placeholder</span>=<span class="str">"Post title"</span>
-        <span class="attr">style</span>={{ <span class="prop">borderWidth</span>: <span class="num">1</span>, <span class="prop">padding</span>: <span class="num">10</span>, <span class="prop">marginBottom</span>: <span class="num">10</span>, <span class="prop">borderRadius</span>: <span class="num">8</span> }}
-      <span class="op">/&gt;</span>
-      <span class="op">&lt;</span><span class="jsx-tag">TextInput</span>
-        <span class="attr">value</span>={body}
-        <span class="attr">onChangeText</span>={setBody}
-        <span class="attr">placeholder</span>=<span class="str">"Post body"</span>
-        <span class="attr">multiline</span>
-        <span class="attr">style</span>={{ <span class="prop">borderWidth</span>: <span class="num">1</span>, <span class="prop">padding</span>: <span class="num">10</span>, <span class="prop">marginBottom</span>: <span class="num">10</span>, <span class="prop">borderRadius</span>: <span class="num">8</span>, <span class="prop">height</span>: <span class="num">100</span> }}
-      <span class="op">/&gt;</span>
-      <span class="op">&lt;</span><span class="jsx-tag">Button</span>
-        <span class="attr">title</span>={loading ? <span class="str">"Creating..."</span> : <span class="str">"Create Post"</span>}
-        <span class="attr">onPress</span>={handleCreate}
-        <span class="attr">disabled</span>={loading}
-      <span class="op">/&gt;</span>
+      <span class="op">&lt;</span><span class="jsx-tag">TextInput</span> <span class="attr">value</span>={title} <span class="attr">onChangeText</span>={setTitle} <span class="attr">placeholder</span>=<span class="str">"Title"</span>
+        <span class="attr">style</span>={{ <span class="prop">borderWidth</span>:<span class="num">1</span>, <span class="prop">padding</span>:<span class="num">10</span>, <span class="prop">marginBottom</span>:<span class="num">10</span>, <span class="prop">borderRadius</span>:<span class="num">8</span> }} <span class="op">/&gt;</span>
+      <span class="op">&lt;</span><span class="jsx-tag">TextInput</span> <span class="attr">value</span>={body} <span class="attr">onChangeText</span>={setBody} <span class="attr">placeholder</span>=<span class="str">"Body"</span> <span class="attr">multiline</span>
+        <span class="attr">style</span>={{ <span class="prop">borderWidth</span>:<span class="num">1</span>, <span class="prop">padding</span>:<span class="num">10</span>, <span class="prop">marginBottom</span>:<span class="num">10</span>, <span class="prop">borderRadius</span>:<span class="num">8</span>, <span class="prop">height</span>:<span class="num">100</span> }} <span class="op">/&gt;</span>
+      <span class="op">&lt;</span><span class="jsx-tag">Button</span> <span class="attr">title</span>=<span class="str">"Create Post"</span> <span class="attr">onPress</span>={handleCreate} <span class="op">/&gt;</span>
     <span class="op">&lt;/</span><span class="jsx-tag">View</span><span class="op">&gt;</span>
   );
 };
 
 <span class="kw">export default</span> CreatePostForm;</pre></div>
-    </div>
-
-    <div class="callout tip">
-      <div class="callout-label">WatermelonDB + TanStack Query</div>
-      You can combine both! Use WatermelonDB as the <strong>local offline database</strong> and TanStack Query for <strong>network requests</strong>. On sync, WatermelonDB pulls from API → stores locally → UI observes local DB. Best of both worlds.
+      </div>
+      <div class="callout tip">
+        <div class="callout-label">WatermelonDB + TanStack Query</div>
+        Combine both! WatermelonDB as the <strong>local offline database</strong>, TanStack Query for <strong>network requests</strong>. On sync, WatermelonDB pulls from API → stores locally → UI observes local DB.
+      </div>
     </div>
   </div>
 </section>
